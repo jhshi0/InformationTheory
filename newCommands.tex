@@ -1,0 +1,46 @@
+\newcommand*
+    \widefbox[1]
+    {\fbox{\hspace{2em}#1\hspace{2em}}}
+
+\newcommand
+    {\del}[1][]
+    {
+        \tensor
+        {\partial}
+        {_{#1}}
+    } 
+
+\newcommand
+    {\condProb}
+    [2]
+    {
+    P \qty 
+      (#1 \mid #2) 
+    } 
+
+\newcommand 
+{\innerProd}
+[2]
+{
+    \langle #1, 
+    #2 \rangle
+}
+
+\newcommand
+{\demand}
+{\overset{!}{=}}
+
+\newcommand
+{\partition}
+{\mathscr{Z}} 
+
+\newcommand{\half} 
+{\frac{1}{2}} 
+
+\newcommand 
+{\mat} 
+[1]
+{\mathbf{#1}}
+
+
+

@@ -1,0 +1,62 @@
+\section*
+{Cramer-Rao}
+
+We are to establish 
+the Cramer-Rao lower bound. 
+
+\subsection* 
+{Fisher Metric}
+
+We can define 
+\textit{Fisher Metric} to be 
+\begin{align*}
+    g_{ij} 
+& \equiv  
+    \int_{X}
+    \dd[N]{x} 
+    P(\Vec{x}, \Vec{\theta})
+    \qty 
+    (
+        \pdv 
+        {\log P(\Vec{x},
+        \Vec{\theta})}
+        {\theta_{i}}
+    )
+    \qty 
+    (
+        \pdv 
+        {\log P(\Vec{x},
+        \Vec{\theta})}
+        {\theta_{j}}
+    )
+=
+    \expval
+    {
+        \del[i] 
+        (\log 
+        P(\Vec{x},
+        \Vec{\theta}))
+        \del[j] 
+        (\log 
+        P(\Vec{x},
+        \Vec{\theta}))
+    }_{X}
+\end{align*}
+Which also expresses as
+\begin{align*}
+??
+    g_{ij}
+& =
+    \expval
+    {
+        \pdv 
+        { \log 
+          ( P^{-1} ( 
+          \Vec{x}, \Vec{\theta}
+          ))
+        }
+        { \theta_{i} } 
+        { \theta_{j} }
+    }_{X}  
+\end{align*}
+

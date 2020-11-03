@@ -1,0 +1,583 @@
+\subsection*
+{Holder's inequality} 
+Holder's inequality 
+concisely expresses to be: 
+\begin{gather*}
+    \innerProd
+    {a} {b}
+\geq 
+    \norm{a} _{p}
+\cdot 
+    \norm{b} _{q}
+\qq{if}
+    1 \demand 
+    p^{-1} + q^{-1}
+\\
+\qq
+{Where}
+    \innerProd 
+    {a} {b}
+\equiv 
+    \sum_{i} 
+    a_{i} b_{i}
+\end{gather*}
+Let us first derive 
+the {\it Young inequality}: 
+$$
+\qq
+{assume}  
+    \alpha, \beta 
+    \in \mathbb{R} 
+\qq{and}
+    t     \equiv p^{-1}, 
+    (1-t) \equiv q^{-1} 
+          \demand (1 - p^{-1})
+\qq{so that}
+    \alpha \beta  
+\leq 
+    p^{-1} \alpha^{p}
++
+    q^{-1} \beta^{q}
+$$ 
+Let us use the log function,
+which is {\it concave}
+\begin{gather*}
+    f(x) := 
+    \log x 
+\qq{so that}
+    \pdv[2]
+    {f}{x}
+=
+    (-) x^{2}
+\\
+\qq{because}
+    (-) x^{2} 
+>
+    0 
+\implies 
+\therefore
+    \pdv[2]
+    {f}{x}
+>
+    0
+\end{gather*}
+Then
+\begin{align*}
+    f 
+    (t \alpha ^{p}
+     + (1-t) \beta^{q})
+&
+\geq 
+    t f(\alpha ^{p}) 
++
+    (1-t) f(\beta^{q}) 
+\\
+&   
+\geq 
+    \log \alpha ^{t p}
++
+    \log \beta ^{(1-t) q }
+\\
+&   
+\geq 
+    \log 
+    ( \alpha ^{t p}
+    \beta ^{(1-t) q } )
+\\
+&   
+\geq 
+    \log \alpha \beta 
+\end{align*} 
+where 
+$ t p   = p^{-1} p = 1,
+(1-t) q = q^{-1} q = 1 
+$. 
+Because $f=\log$ is monotonically increasing:
+\begin{align*}
+    \therefore 
+    p^{-1} \alpha ^{p}
++ 
+    q^{-1} \beta^{q}
+\leq 
+    \alpha \beta  
+\qq{Young inequality}
+\end{align*}
+By letting
+\begin{align*} 
+    \alpha 
+\mapsto
+    a_{i} 
+    \qty
+    (
+    \sum_{i}
+    a_{i} ^{p}
+    )^{-1/p}
+\qq{and}
+    \beta 
+\mapsto
+    b_{i} 
+    \qty
+    (
+    \sum_{i}
+    b_{i} ^{q}
+    )^{-1/q}
+\end{align*}
+and defining the 
+$\mathbb{L}^{p}$ 
+norm:
+$$
+    \norm{x}_{p}
+\equiv 
+    \qty(
+    \sum_{i} 
+    x^{p}
+    )^{1/p}
+$$
+Young inequality 
+implies that
+\begin{align*}
+    a_{i} b_{i}
+    \qty 
+    (\norm{a} _{p}
+    \norm{b} _{q}
+    )^{-1}
+& \geq 
+    p^{-1}
+    a _{i} ^{p}
+    (
+    \sum_{i}
+    a_{i} ^{p}
+    )^{-p/p}
++
+    q^{-1}
+    b _{i} ^{q}
+    (
+    \sum_{i}
+    b_{i} ^{q}
+    )^{-q/q}
+\\
+& \geq 
+    p^{-1}
+    a _{i} ^{p}
+    (
+    \sum_{i}
+    a_{i} ^{p}
+    )^{-1}
++
+    q^{-1}
+    b _{i} ^{q}
+    (
+    \sum_{i}
+    b_{i} ^{q}
+    )^{-1}
+\end{align*}
+Tracing the inequality: 
+\begin{align*}
+    \sum _{i}
+    a_{i} b_{i} 
+    \qty 
+    (\norm{a} _{p}
+    \norm{b} _{q}
+    )^{-1}
+& \geq 
+    \sum_{i}
+    \{  
+    p^{-1}
+    a _{i} ^{p}
+    (
+    \sum_{i}
+    a_{i} ^{p}
+    )^{-1}
++
+    q^{-1}
+    b _{i} ^{q}
+    (
+    \sum_{i}
+    b_{i} ^{q}
+    )^{-1} \}
+\\
+& \geq 
+    p^{-1}
+    (\sum_{i} 
+    a_{i} ^{p})
+    (\sum_{i} 
+    a_{i} ^{p})^{-1}
++
+    q^{-1}
+    (\sum_{i} 
+    b_{i} ^{q})
+    (\sum_{i} 
+    b_{i} ^{q})^{-1}
+\\
+& \geq 
+    p^{-1} + q^{-1}
+\geq 
+    1
+\end{align*}
+Therefore:
+\begin{align*}
+    \therefore 
+    \sum _{i} 
+    a_{i} b_{i}
+\geq 
+    \qty 
+    (\norm{a} _{p}
+    \cdot 
+    \norm{b} _{q} ) 
+\qq
+{Holder inequality.}
+\end{align*}
+Further, 
+a cavalier passage 
+to the continuous 
+would be:
+$$
+    \sum_{i} 
+    \rightarrow 
+    \int_{x \in S} \dd{x}
+$$ 
+so that
+Holder inequality 
+for 
+$a := a(x), 
+b := b(x)$ 
+on continuous  
+$x\in S$ is:
+\begin{gather*} 
+    \int _{x\in S} 
+    \dd{x} 
+    ( a b ) 
+\geq 
+    \qty 
+    (\int _{x\in S}
+    \dd{x}
+        a^{p}
+    )^{1/p}
+\cdot 
+    \qty 
+    (\int _{x\in S}
+    \dd{x}
+        b^{q}
+    )^{1/q}
+    .
+\end{gather*}  
+
+\subsection*
+{Multivariate Gaussian}
+Let us integrate 
+the multivariate Gaussian, 
+where $\nu$ is 
+the {\it Lebesgue measure}:
+$$
+    P (\vec{x})
+\equiv 
+    \partition ^{-1} 
+\cdot 
+    e^ 
+    { 
+        (-) 
+        \sum _{i=1} ^{N}
+        a _{i} \cdot x _{i} ^{2}
+    }
+$$ 
+The aim is to validate that: 
+\begin{align*}
+    \partition 
+=
+    (2 \pi) ^{N/2}
+    (\det  
+     \mathbf{M} ^{-1}) 
+     ^{-1/2}
+\end{align*}
+for some 
+$\mathbf{M} \in 
+\text {GL} 
+(\mathbb{R}, N)$. 
+
+To start, let us consider 
+the multivariate integral 
+on $\vec{x} 
+\equiv (x_{1}, ..., x_{N}) 
+\in \mathbb{R}^{N}$:
+$$
+    I_{N}
+\equiv 
+    \int \dd [N] {\vec{x}}
+    e^ 
+    { (-) \sum _{i = 1} ^{N}
+    a_{i} x _{i} ^{2}}
+$$
+Assuming Gaussian integral of single vairable: 
+$$
+    I '_{1} 
+\equiv 
+    \int _{x \in \mathbb{R}}
+\dd{x}
+    e^{ - x^{2} }
+=
+    (\pi) ^{1/2}
+$$ 
+so that 
+\begin{align*}
+    I _{N}
+& =
+    \int \dd [N] {x} 
+e^
+{ (-) \half 
+  \sum _{i}
+  \beta _{i}  x _{i} ^{2} } 
+\\
+& =  
+( \int \dd{x_{1}}  
+  e^ 
+  { (-) \half 
+    \beta _{1}  x _{1} ^{2} } )
+\times ... \times 
+( \int \dd{x_{N}}  
+  e^ 
+  { (-) \half 
+    \beta _{N}  x _{1} ^{2} } ) 
+\\
+& = 
+( \sqrt{2} \beta _{1} ^{(-)\half} 
+  \int \dd{y_{1}}  
+  e^ 
+  { (-) \half 
+    \beta _{1}  y _{1} ^{2} } )
+\times ... \times 
+( \sqrt{2} \beta _{N} ^{(-)\half} 
+  \int \dd{y_{N}}  
+  e^ 
+  { (-) \half 
+    \beta _{N}  y _{N} ^{2} } )
+\\ 
+& = 
+    (2 \pi \beta _{1} ^{(-)} )
+    ^{\half}
+\times ... \times 
+    (2 \pi \beta _{N} ^{(-)} )
+    ^{\half}
+= 
+    (2 \pi)^{N/2} 
+    (\beta_{1} ^{(-) \half} 
+    \times ... \times 
+    \beta_{N} ^{(-) \half}) 
+\\
+& = 
+    (2 \pi)^{N/2} 
+    (\beta_{1} ^{(-) \half} 
+    \times ... \times 
+    \beta_{N} ^{(-) \half}) 
+\end{align*}
+Where assuming that 
+$$
+    \mathbf{\Theta} 
+\equiv 
+    \text{diag}
+    (\beta_{1}...\beta_{N})  
+=
+    \delta _{ij} \beta_{i}
+\qq{so that}
+    (\beta_{1} ^{(-) \half} 
+    \times ... \times 
+    \beta_{N} ^{(-) \half}) 
+\mapsto
+    \det (\mathbf{\Theta} )
+$$
+Further:
+$$
+    \sum _{i=1} ^{N}
+    \beta _{i}
+    x _{i} ^{2}
+=
+    \sum _{i \in [1,N]}  
+    \sum _{j \in [1,N]} 
+    \beta_{i} \delta_{ij}
+    x_{i} x_{j} 
+=
+    \sum _{i \in [1,N]}  
+    \sum _{j \in [1,N]} 
+    x _{i} 
+    [ \mat{\Theta} ] _{ij}
+    x _{j}
+=
+    \mat{x} ^{\intercal} 
+    \mat{\Theta} 
+    \mat{x}
+$$
+Therefore:
+\begin{align*}
+    \therefore 
+    I_{N} 
+& = 
+    \int \dd[N] {\vec{x} } 
+e^
+{ (-) \half \sum _{i} 
+\beta _{i} 
+x _{i} ^{2} }
+= 
+    ( 2\pi )^{N/2} 
+    ( \prod _{i \in [1,N]}  
+    \beta _{i} )
+    ^{(-) \half}
+=
+    \qty[ 
+    ( 2\pi )^{N/2} 
+    \times 
+    ( \det \mat{\Theta} ) ]
+    ^{\half} 
+=
+    \int \dd[N] {\vec{x} } 
+    e^
+    { (-) \half 
+    \mat{x} ^{\intercal} 
+    \mat{\Theta} 
+    \mat{x} }
+\end{align*}
+Again:
+$$
+    \mat {\Theta} _{ij}
+=
+    \delta _{ij} \beta _{i}
+=
+    \mat {\Theta} _{ji}
+\qq{so that} 
+    \mat {\Theta} 
+=
+    \mat {\Theta} ^{\intercal} 
+\qq
+{symmetric} 
+$$
+Generalizing to 
+(symmetric) $\mat{M}$ 
+through a linear transform:
+$$
+    \vec{x} 
+=
+    \mat{B} 
+    \vec{q} 
+\qq{so that} 
+    \int  \dd[N] {\vec{x}}  \cdot 
+=
+    \int \dd[N] {\vec{q}} 
+    \pdv 
+    {(x_{1} ... x_{N})} 
+    {(q_{1} ... q_{N})} 
+    \cdot 
+=
+    \int \dd[N] {\vec{q}}  
+    \norm{\det (B)} 
+    \cdot 
+$$ 
+Then 
+$$
+    \mat{x} ^{\intercal} 
+    \mat{\Theta} 
+    \mat{x} 
+=
+    \mat{q} ^{\intercal} 
+    \mat{B} ^{\intercal} 
+    \mat{\Theta} 
+    \mat{B} \mat{q} 
+\equiv
+    \mat{q} ^{\intercal} 
+    \mat{M} 
+    \mat{q}
+$$
+Where 
+$\mat{M} 
+    \equiv 
+\mat{B} ^{\intercal} 
+\mat{\Theta} 
+\mat{B} $
+and
+$$ \qq{since}
+    \mat {\Theta} 
+=
+    \mat {\Theta} ^{\intercal} 
+\implies 
+    \mat{M} ^{\intercal} 
+=
+    ( \mat{B} ^{\intercal} 
+    \mat{\Theta} 
+    \mat{B} )  
+    ^{\intercal}
+=
+    ( \mat{B} ^{\intercal} 
+    \mat{\Theta} 
+    \mat{B} )  
+=
+    \mat{M}
+$$  
+Thus:
+\begin{align*}
+    I _{N} 
+=
+    \int \dd[N] {\vec{q}}
+    \norm { \det \mat{B} }
+    e^
+    {
+    (-) \half 
+    \mat{q} ^{\intercal} 
+    \mat{M} 
+    \mat{q} 
+    }
+=
+\norm { \det \mat{B} }
+    \int \dd[N] {\vec{q}}
+    e^
+    {
+    (-) \half 
+    \mat{q} ^{\intercal} 
+    \mat{M} 
+    \mat{q} 
+    }
+=
+    ( 2\pi ) ^{N/2} 
+    (\det \mat{\Theta} )
+    ^{- \half}
+\end{align*}   
+Noting that 
+\begin{gather*}
+    \norm { \det \mat{B} }
+=
+    (\det \mat{B}) ^{2 \cdot \half}
+\qq{so that}  
+    \int \dd[N] {\vec{q}} 
+    e^{(-) \half 
+    \mat{q}^{\intercal} 
+    \mat{M} \mat{q} }
+=
+    (2 \pi) ^{N/2}
+    ( \det \mat{B} ^{2} 
+    \det \mat{\Theta}) 
+    ^{- \half}
+\\
+    \qq 
+    {Further}  
+    \int \dd[N] {\vec{q}} 
+    e^{(-) \half 
+    \mat{q}^{\intercal} 
+    \mat{M} \mat{q} }
+=
+    (2\pi) ^{N/2}
+    (\det (\mat{B}^{\intercal} 
+    \mat {\Theta} 
+    \mat {B}) ^{- \half}
+=
+    (2\pi) ^{N/2}
+    (\det \mat{M})
+    ^{- \half}
+\end{gather*}
+Where we employed 
+the identity, i.e
+$
+    \det \mat{B}
+= 
+    \det (\mat{B} ^{\intercal})
+$,
+and 
+$ \mat{M} \in 
+\text{GL} (N,\mathbb{R})$ 
+is real and symmetric.
+

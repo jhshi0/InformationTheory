@@ -1,0 +1,290 @@
+\section*
+{Exponential Family}
+
+One can define 
+\begin{gather*}
+    \text{
+    exponential 
+    family:}
+\quad 
+    \condProb 
+    {x}{\theta} 
+\equiv
+    h(x) 
+\cdot 
+    e^
+    {
+        \innerProd
+        {\theta}
+        {\phi} 
+    -
+        A 
+        (\theta) }
+        ,
+\\
+\qq{log partition:}
+    A 
+    (\theta) 
+=
+    \log 
+    \int _{x \in S}
+    \dd{\mu [x]}
+    e^
+    { \innerProd
+      {\theta} {\phi}}
+    , 
+\qq{features:}
+    \phi := 
+    \phi (x)
+    .
+\end{gather*}  
+
+\subsection* 
+{Cumulant is convex}
+Let us demonstrate 
+that $A$ is convex.  
+Recall that 
+a real function $f$ is convex,  
+if 
+$$
+    f( \lambda x + (1-\lambda) y ) 
+\leq
+    \lambda f(x) 
++
+    (1 - \lambda) f(y)
+$$  
+for all $x, y \in \mathbb{R}$.
+
+For said task, 
+we need Holder's inequality.
+For 
+$\alpha, \beta 
+\in \mathbb{R}$,
+that if 
+$p^{-1} + q^{-1}  
+\overset{!}{=} 1: 
+    \innerProd 
+    {\alpha} {\beta} 
+\leq 
+    \norm {\alpha} _{p}
+    \cdot 
+    \norm {\beta} _{q}
+$, where
+$$
+    \innerProd
+    {\alpha}
+    {\beta}
+=
+    \int _{x\in S}
+    \dd{\mu[x]}
+    \cdot 
+    (
+    \alpha 
+    \beta )
+\quad 
+    \norm{\alpha _{p}}
+\equiv 
+    \qty(
+        \int _{x\in S}
+        \dd{\mu[x]}
+        \cdot 
+        \alpha ^{p}
+    )^{1/p}
+\quad 
+    \norm{\beta _{q}}
+\equiv
+    \qty(
+        \int _{x\in S}
+        \dd{\mu[x]}
+        \cdot 
+        \beta ^{q}
+    )^{1/q}
+$$
+Then 
+\begin{align*}
+    A (\theta) 
+& \equiv 
+    \log 
+    \int _{x \in S}
+    \dd{\mu [x]}
+    e^
+    { \innerProd
+      {\theta} {\phi}}  
+\end{align*} 
+Letting 
+$  \theta (\lambda) 
+= 
+   \lambda \theta_{1} 
+   + (1 - \lambda) \theta_{2} $,
+Cumulant (i.e $A$) 
+becomes: 
+\begin{align*}
+    A (\theta _{\lambda}) 
+& =
+    \log \int _{x\in S} 
+    \mu[ \dd{x} ] 
+\cdot 
+    e^{
+        \innerProd
+        { \lambda \theta_{1} 
+          + (1 - \lambda) \theta_{2}
+        }
+        {\phi}
+    } 
+=
+    \log \int _{x\in S} 
+    \mu[ \dd{x} ] 
+\cdot
+    ( e^{
+            \innerProd
+            { \theta_{1} }
+            {\phi} } ) 
+    ^{\lambda} 
+    ( e^{
+        \innerProd
+        { \theta_{2} }
+        {\phi} ) } 
+    ) 
+    ^{1 - \lambda} 
+\end{align*}
+{\it Holder's Inequality} implies: 
+\begin{align*}
+        \int _{x\in S} 
+        \mu[ \dd{x} ] 
+    \cdot
+        ( e^{
+                \innerProd
+                { \theta_{1} }
+                {\phi} } ) 
+        ^{\lambda} 
+        ( e^{
+            \innerProd
+            { \theta_{2} }
+            {\phi} ) } 
+        ) 
+        ^{1 - \lambda} 
+& \leq 
+( 
+        \int _{x\in S} \mu[ \dd{x} ] 
+        \cdot
+    (
+        e^ 
+        { \innerProd
+        { \theta_{1} } {\phi}  
+        }
+    )  
+    ^{\lambda / \lambda}
+) 
+^{\lambda} 
+\cdot 
+( 
+        \int _{x\in S} \mu[ \dd{x} ] 
+        \cdot
+    (
+        e^ 
+        {  \innerProd
+           { \theta_{2} } {\phi}  
+        }
+    )  
+    ^{ (1 - \lambda ) 
+       ( 1 - \lambda)^{-1}
+     }
+) 
+^{1 - \lambda} 
+\\ 
+& \leq 
+( 
+        \int _{x\in S} \mu[ \dd{x} ] 
+        \cdot
+        e^ 
+        { \innerProd
+        { \theta_{1} } {\phi}  
+        }
+)  
+^{\lambda} 
+\cdot 
+( 
+        \int _{x\in S} \mu[ \dd{x} ] 
+        \cdot
+        e^ 
+        {  \innerProd
+           { \theta_{2} } {\phi}  
+        }
+) 
+^{(1 - \lambda)} 
+\end{align*}
+Since $\log$ is
+monotonically increasing 
+on $\theta \in \mathbb{R}$,
+the inequality propagates 
+toward the cumulant:
+\begin{gather*}
+    \log 
+    \int _{x\in S} 
+    \mu[ \dd{x} ] 
+\cdot
+    ( e^{
+            \innerProd
+            { \theta_{1} }
+            {\phi} } ) 
+    ^{\lambda} 
+    ( e^{
+        \innerProd
+        { \theta_{2} }
+        {\phi} ) } 
+    ) 
+    ^{1 - \lambda} 
+\leq 
+    \log 
+( 
+        \int _{x\in S} \mu[ \dd{x} ] 
+        \cdot
+        e^ 
+        { \innerProd
+        { \theta_{1} } {\phi}  
+        }
+)  
+^{\lambda} 
+\cdot 
+( 
+        \int _{x\in S} \mu[ \dd{x} ] 
+        \cdot
+        e^ 
+        {  \innerProd
+           { \theta_{2} } {\phi}  
+        }
+) 
+^{(1 - \lambda)} 
+\\ 
+    A (\theta _{\lambda})
+\leq 
+    \lambda  \cdot 
+    \log 
+    ( 
+        \int _{x\in S} \mu[ \dd{x} ] 
+        \cdot
+        e^ 
+        { \innerProd
+        { \theta_{1} } {\phi}  
+        }
+    )   
++ 
+    (1 - \lambda)  \cdot  
+    \log 
+    ( 
+        \int _{x\in S} \mu[ \dd{x} ] 
+        \cdot
+        e^ 
+        {  \innerProd
+           { \theta_{2} } {\phi}  
+        }
+    ) 
+\leq 
+    \lambda \cdot A (\theta _{1})
+    + (1 - \lambda) 
+\cdot 
+    A (\theta _{2})
+\end{gather*}
+So $A$ is {\it convex}.
+
+
